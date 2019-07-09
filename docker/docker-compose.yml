@@ -5,8 +5,11 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    command: ./manage.py runserver 0.0.0.0:8000
     volumes:
       - ../src:/app/src
       - ../requirements:/app/requirements
+    env_file:
+      - ./local.env
     ports:
       - 8000:8000
