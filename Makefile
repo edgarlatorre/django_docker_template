@@ -15,3 +15,6 @@ down:
 
 bash:
 	docker-compose -f $(DOCKER_COMPOSE) run --rm app bash
+
+psql:
+	docker-compose -f $(DOCKER_COMPOSE) exec db psql -U postgres
